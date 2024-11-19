@@ -70,17 +70,34 @@ Ensure you have the following installed:
 
 ```
 zkp-project/
-├── data/
-│   └── your_dataset.csv
-├── lib/
-│   └── unique_sort2/
-│       ├── main.js
-│       ├── setup.js
-│       ├── generateZKProof.js
-│       ├── verifyZKProof.js
-│       └── functions/
-│           ├── merkle_functions.js
-│           └── bigint.js
+data
+├── complete
+│   ├── c10.csv
+│   └── nc10.csv
+└── unique
+    ├── d10.csv
+    ├── d100.csv
+    ├── d1000.csv
+    ├── u10.csv
+    ├── u100.csv
+    └── u1000.csv
+lib
+├── unique_rows
+│   ├── circom_templates
+│   │   ├── circuit_main.js
+│   │   ├── circuit_merkleroot.js
+│   │   └── circuit_unique.js
+│   ├── config.js
+│   ├── functions
+│   │   ├── exec_command.js
+│   │   ├── merkle_functions.js
+│   │   ├── ptau_picker.js
+│   │   └── write_dynamic_circuit.js
+│   ├── generateZKProof.js
+│   ├── main.js
+│   └── setup.js
+└── utils
+    └── generate_csv.js
 ├── generated/
 │   ├── circom/
 │   ├── snarkjs/
@@ -91,8 +108,8 @@ zkp-project/
 ```
 
 - `data/`: Contains the input datasets in CSV format.
-- `lib/unique_sort2/`: Houses the main scripts for setup, proof generation, and verification.
-- `lib/unique_sort2/functions/`: Includes utility functions for Merkle Tree construction and BigInt handling.
+- `lib/unique_rows/`: Houses the main scripts for setup, proof generation, and verification.
+- `lib/unique_rows/functions/`: Includes utility functions for Merkle Tree construction and dynamically writing the circom circuits.
 - `generated/`: Stores generated files such as Circom circuits, SnarkJS outputs, and scripts.
 - `config.js`: Configuration file specifying directory paths and other settings.
 
@@ -101,7 +118,7 @@ zkp-project/
 - Node.js
 - npm
 - circomlibjs
-- crypto-browserify
+- crypto-browserifys
 - csv-parser
 - snarkjs
 
