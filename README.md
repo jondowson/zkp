@@ -74,7 +74,7 @@ data
 ├── complete
 │   ├── c10.csv
 │   └── nc10.csv
-└── unique
+└── unique_rows
     ├── d10.csv
     ├── d100.csv
     ├── d1000.csv
