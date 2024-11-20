@@ -1,10 +1,12 @@
-# Zero-Knowledge Proof Project
+<p align="center"><img src="./ZKP_logo.png" alt="ZKP Logo" width="200" height="auto"></p>
 
-This project demonstrates the implementation of Zero-Knowledge Proofs (ZKPs) to verify the uniqueness and sorted order of data entries without revealing the actual data. By leveraging cryptographic techniques, we ensure data integrity and privacy.
+# Zero-Knowledge-Proof Data Quality
+
+This project demonstrates the implementation of Zero-Knowledge Proofs (ZKPs) to verify qualitative aspects of data sets. For example, the uniqueness and sorted order of data entries without revealing the actual data. By leveraging cryptographic techniques, we ensure data integrity and privacy.
 
 ## Project Overview
 
-The primary objective is to process a dataset, compute cryptographic hashes for each entry, and construct Merkle Trees to represent both the original and sorted datasets. We then generate and verify ZKPs to confirm that the data entries are unique and correctly sorted, all without exposing the underlying data.
+The primary objective is to process a dataset, compute cryptographic hashes for each entry, and construct Merkle Trees to represent both the original and sorted datasets. We then generate and verify ZKPs to confirm that the data entries are unique and correctly sorted, all without exposing the underlying data. This approach also ensures data provenance as the root hash of the original dataset as well as the root hash of its sorted entries are themselves part of the proof.
 
 ## Features
 
