@@ -1,4 +1,4 @@
-![ZKP Logo](./ZKP_logo.png)
+<img src="./ZKP_logo.png" alt="ZKP Logo" width="150" height="auto">
 
 # Zero-Knowledge Proof Project
 
