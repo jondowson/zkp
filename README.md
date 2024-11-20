@@ -1,4 +1,4 @@
-<p align="center"><img src="./ZKP_logo.png" alt="ZKP Logo" width="150" height="auto"></p>
+<p align="center"><img src="./ZKP_logo.png" alt="ZKP Logo" width="200" height="auto"></p>
 
 # Zero-Knowledge Proof Project
 
