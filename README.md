@@ -2,8 +2,7 @@
 
 # Zero-Knowledge-Proof Data Quality
 
-This project demonstrates the implementation of Zero-Knowledge Proofs (ZKPs) to verify qualitative aspects of data sets.  
-For example, the uniqueness and sorted order of data entries without revealing the actual data. By leveraging cryptographic techniques, we ensure data integrity and privacy.
+This project demonstrates the implementation of Zero-Knowledge Proofs (ZKPs) to verify qualitative aspects of data sets. For example, the uniqueness and sorted order of data entries without revealing the actual data. By leveraging cryptographic techniques, we ensure data integrity and privacy.
 
 ## Project Overview
 
