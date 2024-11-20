@@ -1,3 +1,5 @@
+![ZKP Logo](./ZKP_logo)
+
 # Zero-Knowledge Proof Project
 
 This project demonstrates the implementation of Zero-Knowledge Proofs (ZKPs) to verify the uniqueness and sorted order of data entries without revealing the actual data. By leveraging cryptographic techniques, we ensure data integrity and privacy.
