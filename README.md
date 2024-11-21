@@ -111,12 +111,18 @@ Note that for the Docker installation the container mounts the host machines fil
 
    If not already installed, you can download it from the [official Docker website](https://www.docker.com/get-started/).
 
-2. **Pull the Docker Image:**
+2. **Pull or build the Docker Image:**
 
-   Retrieve the pre-built Docker image from Docker Hub:
+   To retrieve the pre-built Docker image from Docker Hub:
 
    ```bash
    docker pull namenottaken/zkp-environment:latest
+   ```
+
+   To build the Dockerfile locally:
+
+   ```bash
+   docker build -t namenottaken/zkp-environment:latest .
    ```
 
 ## Usage
