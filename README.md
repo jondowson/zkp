@@ -15,60 +15,138 @@ The primary objective is to process a dataset, compute cryptographic hashes for 
 - **Zero-Knowledge Proof Generation:** Generates proofs to verify data properties without revealing the data itself.
 - **Proof Verification:** Verifies the generated proofs to ensure data integrity and correctness.
 
-## Prerequisites
-
-Ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (version 14 or higher)
-- [npm](https://www.npmjs.com/)
-
 ## Installation
 
-1. **Clone the Repository:**
+You can set up the project natively or more easily using docker.
 
+### 1. Native Installation
+To run the project natively without Docker, follow these steps to install the necessary software dependencies:
+
+- Node.js
+- npm
+- circomlibjs
+- crypto-browserifys
+- csv-parser
+- snarkjs
+
+1. **Install Node.js and npm:**
+   
+   Ensure that Node.js (version 14 or higher) and npm are installed on your system. You can download them from the [official Node.js website](https://nodejs.org/).
+   
+   To verify the installation, run:
    ```bash
-   git clone https://github.com/yourusername/zkp-project.git
+   node -v
+   npm -v
+   ```
+   These commands should display the installed versions of Node.js and npm, respectively.
+
+2. **Install Rust and Cargo:**
+   The project requires Rust and its package manager, Cargo. Install them using rustup:
+   ```bash
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   ```
+   Follow the on-screen instructions to complete the installation. After installation, ensure that the Cargo bin directory is in your system's PATH.
+
+   Verify the installation by running:
+   ```bash
+   rustc --version
+   cargo --version
    ```
 
-2. **Navigate to the Project Directory:**
-
+3. **Install Circom:**
+   Circom is a circuit compiler for zkSNARKs. Clone the Circom repository and build it:
    ```bash
-   cd zkp-project
+   git clone https://github.com/iden3/circom.git
+   cd circom
+   cargo build --release
+   cargo install --path circom
+   ```
+   After installation, verify by running:
+   ```bash
+   circom --version
    ```
 
-3. **Install Dependencies:**
-
+4. **Install SnarkJS:**
+   SnarkJS is a JavaScript library for zkSNARKs. Install it globally using npm:
    ```bash
+   npm install -g snarkjs
+   ```
+   Verify the installation:
+   ```bash
+   snarkjs --version
+   ```
+
+5. **Install Additional Node.js Packages:**
+   Navigate to the project directory and install the required Node.js packages:
+   ```bash
+   cd path/to/zkp-project
    npm install
+   ```
+   This command installs the dependencies specified in the package.json file.
+
+6. **Install Python 3 and Pip:**
+   Some scripts may require Python 3. Install Python 3 and its package manager, pip, from the official Python website.
+
+   Verify the installation:
+   ```bash
+   python3 --version
+   pip3 --version
+   ```
+
+7. **Install Python Packages:**
+   If the project includes a requirements.txt file, install the necessary Python packages:
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+
+By completing these steps, you will have all the necessary software dependencies installed to run the project natively on your system.
+
+
+### 2. Installation Using Docker
+
+To streamline the setup process, you can utilize Docker to run the project without installing Node.js or npm locally. See the Dockerfile and entrypoint.sh files for more details.
+
+1. **Install Docker:**
+
+   Ensure Docker is installed on your system. If it's not already installed, you can download it from the [official Docker website](https://www.docker.com/get-started/).
+
+2. **Pull the Docker Image:**
+
+   Retrieve the pre-built Docker image from Docker Hub:
+
+   ```bash
+   docker pull namenottaken/zkp-environment:latest
    ```
 
 ## Usage
 
-1. **Prepare Your Dataset:**
-   Ensure your dataset is in CSV format. Place it in the `data` directory of the project.
+1. **Clone the project repo:**
 
-2. **Run the Setup Script:**
-   This script processes the dataset, computes hashes, and constructs Merkle Trees.
+   Retrieve this project.
 
    ```bash
-   node lib/unique_sort2/main.js data/your_dataset.csv
+   git clone https://github.com/jondowson/zkp.git
+   cd zkp
    ```
 
-3. **Generate Zero-Knowledge Proofs:**
-   After setting up, generate the proofs:
+2. **Run the application:**
+   Each subfolder of the lib folder creates a proof for a certain dataset attribute, e.g. uniqueness of rows.
 
    ```bash
-   node lib/unique_sort2/generateZKProof.js
-   ```
+   // To run natively use this command.
+   node lib/<lib_folder>/main.js <lib_folder>/your_dataset.csv
+   // Example:
+   node lib/unique_rows/main.js unique_rows/d100.csv
 
-4. **Verify the Proofs:**
-   Finally, verify the generated proofs:
-
-   ```bash
-   node lib/unique_sort2/verifyZKProof.js
+   // To run with the docker container use this command.
+   docker run --rm -v "$(pwd)":/app namenottaken/zkp-environment:latest <lib_folder> <data_file>
+   // Example - note that main.js is assumed:
+   docker run --rm -v "$(pwd)":/app namenottaken/zkp-environment:latest unique_rows unique_rows/d100.csv
    ```
 
 ## Project Structure
+
+This tree shows the general structure of the project.
 
 ```
 zkp-project/
@@ -112,17 +190,8 @@ lib
 - `data/`: Contains the input datasets in CSV format.
 - `lib/unique_rows/`: Houses the main scripts for setup, proof generation, and verification.
 - `lib/unique_rows/functions/`: Includes utility functions for Merkle Tree construction and dynamically writing the circom circuits.
-- `generated/`: Stores generated files such as Circom circuits, SnarkJS outputs, and scripts.
+- `generated/`: Stores generated files such as Circom circuits, SnarkJS outputs, and scripts. Cleared after every run.
 - `config.js`: Configuration file specifying directory paths and other settings.
-
-## Dependencies
-
-- Node.js
-- npm
-- circomlibjs
-- crypto-browserifys
-- csv-parser
-- snarkjs
 
 ## Contributing
 
