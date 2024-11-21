@@ -130,11 +130,14 @@ Note that for the Docker installation the container mounts the host machines fil
 
 1. **Clone the project repo:**
 
-   For both native and docker usage, retrieve this project and enter the folder.
+   For both native and docker usage, retrieve this project and enter the folder. In addition retrieve the powers of tau files used in the zksnark setup ceremony.
 
    ```bash
    git clone https://github.com/jondowson/zkp.git
    cd zkp
+   mkdir ptau
+   wget -P ptau/ https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_16.ptau
+   wget -P ptau/ https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_22.ptau
    ```
 
 2. **Run the application:**
