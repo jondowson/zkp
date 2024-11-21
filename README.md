@@ -24,6 +24,7 @@ To run the project natively without Docker, follow these steps to install the ne
 
 - Node.js
 - npm
+- Rust ad Cargo 
 - circomlibjs
 - crypto-browserifys
 - csv-parser
