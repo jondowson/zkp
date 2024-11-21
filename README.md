@@ -138,7 +138,8 @@ Note that for the Docker installation the container mounts the host machines fil
    ```
 
 2. **Run the application:**
-   Each subfolder of the lib folder creates a proof for a certain dataset attribute, e.g. uniqueness of rows.
+   Each subfolder of the lib folder creates a proof for a certain dataset attribute, e.g. uniqueness of rows.  
+   See the lib folder for a list of proofs.
 
    ```bash
    // To run natively use this command.
