@@ -122,6 +122,7 @@ Note that for the Docker installation the container mounts the host machines fil
    To build the Dockerfile locally:
 
    ```bash
+   cd zkp
    docker build -t namenottaken/zkp-environment:latest .
    ```
 
