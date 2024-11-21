@@ -104,11 +104,12 @@ By completing these steps, you will have all the necessary software dependencies
 
 ### 2. Installation Using Docker
 
-To streamline the setup process, you can utilize Docker to run the project without installing Node.js or npm locally. See the Dockerfile and entrypoint.sh files for more details.
+To streamline the setup process, you can utilize Docker to run the project without installing Node.js or npm locally. See the Dockerfile and entrypoint.sh files for more details.  
+Note that for the Docker installation the container mounts the host machines file system to access the project itself.
 
 1. **Install Docker:**
 
-   Ensure Docker is installed on your system. If it's not already installed, you can download it from the [official Docker website](https://www.docker.com/get-started/).
+   If not already installed, you can download it from the [official Docker website](https://www.docker.com/get-started/).
 
 2. **Pull the Docker Image:**
 
