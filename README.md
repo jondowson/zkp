@@ -130,7 +130,7 @@ Note that for the Docker installation the container mounts the host machines fil
 
 1. **Clone the project repo:**
 
-   Retrieve this project.
+   For both native and docker usage, retrieve this project and enter the folder.
 
    ```bash
    git clone https://github.com/jondowson/zkp.git
